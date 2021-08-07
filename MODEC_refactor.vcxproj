@@ -150,12 +150,14 @@
     <ClInclude Include="include\xs_lib.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\openmc_operator.cpp" />
     <ClCompile Include="src\dep_zones.cpp" />
     <ClCompile Include="src\fission_yields.cpp" />
     <ClCompile Include="src\modec_functions.cpp" />
     <ClCompile Include="src\modec_global_variables.cpp" />
     <ClCompile Include="src\modec_solver.cpp" />
     <ClCompile Include="src\nuclide_system.cpp" />
+    <ClCompile Include="src\openmc_operator.cpp" />
     <ClCompile Include="src\tinyxml2.cpp" />
     <ClCompile Include="units_test\modec_solver_test.cpp" />
   </ItemGroup>

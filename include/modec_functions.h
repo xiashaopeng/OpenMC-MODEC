@@ -14,7 +14,8 @@ namespace MODEC {
 void InitModec(const std::string& _lib_filename);
 
 // create depletion zones
-void InitDepZones(DepZones& _dep_zones);
+// TODO: set initial densities
+void InitDepZones(DepZones& _dep_zones, std::vector<int>& _zone_indices);
 
 // get burnup matrix A
 SparseMatrix<double> AssembleMat(NuclideSystem& _nuclide_system, const double& norm_factor);

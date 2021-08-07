@@ -193,17 +193,29 @@ void MODEC::InitModec(const std::string& _lib_filename) {
     NuclideSystem::NuclideHelper(nuclide_list, fy_subsitutes);
 };
 
-void MODEC::InitDepZones(DepZones& _dep_zones) {
-    std::vector<int32_t> material_indices;
-    int* nuclide_zais;
-    double* nuclide_dens;
-    int num_nucl;
-    for (auto& entry : openmc::model::material_map) {
-        material_indices.push_back(entry.first);
-        // get initial densities using material id 
-        openmc_material_get_densities(entry.first, &nuclide_zais, &nuclide_dens, &num_nucl);
-    }
-    _dep_zones.Initialize(material_indices);
+void MODEC::InitDepZones(DepZones& _dep_zones, std::vector<int>& _zone_indices) {
+    //std::vector<int32_t> material_indices;
+    //std::vector<int> a;
+
+    //// iterate over mats
+    //for (auto& entry : openmc::model::material_map) {
+    //    material_indices.push_back(entry.first);
+
+    //    int* nuclide_indices;
+    //    double* nuclide_dens;
+    //    const char* nuclide_names;
+    //    int num_nucl;
+
+    //    // get initial densities using material id 
+    //    openmc_material_get_densities(entry.first, &nuclide_indices, &nuclide_dens, &num_nucl);
+
+    //    for (int i = 0; i < num_nucl; ++i) {
+    //        openmc_nuclide_name(i, &nuclide_names);
+    //    }
+    //    
+    //}
+    // _dep_zones.Initialize(material_indices);
+    _dep_zones.Initialize(_zone_indices);
 }
 
 SparseMatrix<double> MODEC::AssembleMat(NuclideSystem& _nuclide_system, const double& norm_factor) {

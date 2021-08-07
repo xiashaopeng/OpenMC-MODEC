@@ -124,5 +124,7 @@
     <ClCompile Include="src\modec_global_variables.cpp" />
     <ClCompile Include="src\dep_zones.cpp" />
     <ClCompile Include="src\modec_functions.cpp" />
+    <ClCompile Include="include\openmc_operator.cpp" />
+    <ClCompile Include="src\openmc_operator.cpp" />
   </ItemGroup>
 </Project>
